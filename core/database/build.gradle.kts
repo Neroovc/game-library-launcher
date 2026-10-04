@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":core:domain"))
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
     
