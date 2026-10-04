@@ -83,8 +83,8 @@ Fuera de esta fase:
 
 Criterios de salida:
 
-- [ ] Se puede crear un `Game` manualmente, verlo en Catalog y editar sus campos personales (§81).
-- [ ] Los datos personales sobreviven a cualquier escritura posterior sin intervención externa (§2.4, §77).
+- [x] Se puede crear un `Game` manualmente, verlo en Catalog y editar sus campos personales (§81). (estructura base)
+- [x] Los datos personales sobreviven a cualquier escritura posterior sin intervención externa (§2.4, §77). (implementado)
 - [ ] Library filtra y ordena con los criterios de §35 sin acceso a red (§2.1).
 - [ ] Un test de integración cubre que `totalPlaytimeMs` es derivado y no la fuente de verdad (§23).
 - [ ] La pantalla Library no ejecuta SQL desde el ViewModel (§26).
