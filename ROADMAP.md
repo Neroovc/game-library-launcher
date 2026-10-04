@@ -57,17 +57,17 @@ Criterios de salida:
 
 Trabajo:
 
-- Implementar la entidad `Game` con los campos funcionales mínimos y los recomendados (§23).
-- Usar identificadores internos estables (UUID), nunca derivados solo de título, ruta, `packageName` o RJ (§39).
-- Modelar `GameStatus` (`PENDING`, `PLAYING`, `COMPLETED`, `ABANDONED`, `ON_HOLD`) independiente de la disponibilidad (§4.2).
-- Modelar la disponibilidad derivada `PLAYABLE`, `CATALOG_ONLY`, `INSTALLATION_MISSING` como resultado de consulta, no como columna de `Game` (§4.3, §36).
-- Implementar `Tag`, `GameTag` con `sourceType` (`EXTERNAL`, `PERSONAL`, `SYSTEM`), `providerId`, `confidence`, `isPersonal` (§21).
+- [x] Implementar la entidad `Game` con los campos funcionales mínimos y los recomendados (§23).
+- [x] Usar identificadores internos estables (UUID), nunca derivados solo de título, ruta, `packageName` o RJ (§39).
+- [x] Modelar `GameStatus` (`PENDING`, `PLAYING`, `COMPLETED`, `ABANDONED`, `ON_HOLD`) independiente de la disponibilidad (§4.2).
+- [x] Modelar la disponibilidad derivada `PLAYABLE`, `CATALOG_ONLY`, `INSTALLATION_MISSING` como resultado de consulta, no como columna de `Game` (§4.3, §36).
+- [x] Implementar `Tag`, `GameTag` con `sourceType` (`EXTERNAL`, `PERSONAL`, `SYSTEM`), `providerId`, `confidence`, `isPersonal` (§21).
 - Mantener engine, plataforma y disponibilidad en columnas/entidades propias; los tags no sustituyen campos estructurados (§21).
-- Implementar `Rating` personal separado de cualquier rating externo (§51).
-- Implementar `Asset` con `type`, `uri`, `sourceUrl`, `providerId`, dimensiones y checksum (§24).
-- Crear DAOs separados por aggregate: `GameDao`, `TagDao`, `AssetDao` (§26).
-- Crear `GameRepository` que exponga modelos de dominio y `Flow`; ningún ViewModel ejecuta SQL (§26).
-- Implementar la pantalla Library con filtros y orden de §35, y la pantalla Game Detail con los bloques de §35.
+- [x] Implementar `Rating` personal separado de cualquier rating externo (§51).
+- [x] Implementar `Asset` con `type`, `uri`, `sourceUrl`, `providerId`, dimensiones y checksum (§24).
+- [x] Crear DAOs separados por aggregate: `GameDao`, `TagDao`, `AssetDao` (§26).
+- [x] Crear `GameRepository` que exponga modelos de dominio y `Flow`; ningún ViewModel ejecuta SQL (§26).
+- [x] Implementar la pantalla Library con filtros y orden de §35, y la pantalla Game Detail con los bloques de §35.
 - Implementar el editor de metadata manual con `source = MANUAL`, válido aunque no exista ningún provider (§31).
 - Implementar el campo `favorite` y `hidden` como datos personales (§2.4, §23).
 - Derivar `totalPlaytimeMs` como caché; la fuente de verdad es `PlaySession` (§23).
