@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gamelauncher.engine.launch-adapters"
+    namespace = "com.gamelauncher.engine.launchadapters"
     compileSdk = 35
 
     defaultConfig {

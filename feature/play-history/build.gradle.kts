@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gamelauncher.feature.play-history"
+    namespace = "com.gamelauncher.feature.playhistory"
     compileSdk = 35
 
     defaultConfig {

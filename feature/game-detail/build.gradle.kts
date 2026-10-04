@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gamelauncher.feature.game-detail"
+    namespace = "com.gamelauncher.feature.gamedetail"
     compileSdk = 35
 
     defaultConfig {

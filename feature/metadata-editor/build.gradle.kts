@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gamelauncher.feature.metadata-editor"
+    namespace = "com.gamelauncher.feature.metadataeditor"
     compileSdk = 35
 
     defaultConfig {
