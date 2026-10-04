@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gamelauncher.core.package.manager"
+    namespace = "com.gamelauncher.core.packagemanager"
     compileSdk = 35
 
     defaultConfig {
