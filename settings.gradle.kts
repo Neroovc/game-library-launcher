@@ -42,3 +42,4 @@ include(":feature:settings")
 include(":engine:detector")
 include(":engine:classifier")
 include(":engine:launch-adapters")
+:core:domain
