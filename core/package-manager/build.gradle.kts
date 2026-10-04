@@ -4,13 +4,17 @@ plugins {
 }
 
 android {
-    namespace = "com.gamelauncher.core.package-manager"
+    namespace = "com.gamelauncher.core.package.manager"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 24
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     compileOptions {
