@@ -48,3 +48,43 @@ Criterios de salida:
 - [x] Existe una migración Room probada desde el schema inicial (§78).
 - [x] Existe una prueba de integración que demuestra el logging categorizado sin datos sensibles (§70).
 - [x] El esqueleto de `LaunchAdapter` compila con `canLaunch()` y `launch()` sin implementaciones reales (§9).
+
+---
+
+## Phase 1 — Núcleo de dominio: Game, tags, estado personal
+
+**Objetivo:** catálogo funcional con creación manual, metadata personal y Library/Detail navegables sin red.
+
+Trabajo:
+
+- Implementar la entidad `Game` con los campos funcionales mínimos y los recomendados (§23).
+- Usar identificadores internos estables (UUID), nunca derivados solo de título, ruta, `packageName` o RJ (§39).
+- Modelar `GameStatus` (`PENDING`, `PLAYING`, `COMPLETED`, `ABANDONED`, `ON_HOLD`) independiente de la disponibilidad (§4.2).
+- Modelar la disponibilidad derivada `PLAYABLE`, `CATALOG_ONLY`, `INSTALLATION_MISSING` como resultado de consulta, no como columna de `Game` (§4.3, §36).
+- Implementar `Tag`, `GameTag` con `sourceType` (`EXTERNAL`, `PERSONAL`, `SYSTEM`), `providerId`, `confidence`, `isPersonal` (§21).
+- Mantener engine, plataforma y disponibilidad en columnas/entidades propias; los tags no sustituyen campos estructurados (§21).
+- Implementar `Rating` personal separado de cualquier rating externo (§51).
+- Implementar `Asset` con `type`, `uri`, `sourceUrl`, `providerId`, dimensiones y checksum (§24).
+- Crear DAOs separados por aggregate: `GameDao`, `TagDao`, `AssetDao` (§26).
+- Crear `GameRepository` que exponga modelos de dominio y `Flow`; ningún ViewModel ejecuta SQL (§26).
+- Implementar la pantalla Library con filtros y orden de §35, y la pantalla Game Detail con los bloques de §35.
+- Implementar el editor de metadata manual con `source = MANUAL`, válido aunque no exista ningún provider (§31).
+- Implementar el campo `favorite` y `hidden` como datos personales (§2.4, §23).
+- Derivar `totalPlaytimeMs` como caché; la fuente de verdad es `PlaySession` (§23).
+
+Secciones cubiertas: §2.2, §2.4, §4.1, §4.2, §4.3, §21, §23, §24, §26, §31, §35, §36, §39, §51.
+
+Fuera de esta fase:
+
+- No existe todavía `Installation`; por tanto `Playable` siempre resuelve a `CATALOG_ONLY` (§4.3).
+- No hay `PlaySession` ni estadísticas de juego (§6).
+- No hay provenance: todavía no hay fuentes externas (§20).
+- No hay identificación de engines más allá del valor manual (§7, §8).
+
+Criterios de salida:
+
+- [ ] Se puede crear un `Game` manualmente, verlo en Catalog y editar sus campos personales (§81).
+- [ ] Los datos personales sobreviven a cualquier escritura posterior sin intervención externa (§2.4, §77).
+- [ ] Library filtra y ordena con los criterios de §35 sin acceso a red (§2.1).
+- [ ] Un test de integración cubre que `totalPlaytimeMs` es derivado y no la fuente de verdad (§23).
+- [ ] La pantalla Library no ejecuta SQL desde el ViewModel (§26).
